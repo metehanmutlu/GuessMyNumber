@@ -36,7 +36,6 @@ export default function App() {
   };
 
   return (
-    // <DismissKeyboard>
     <LinearGradient
       style={styles.linearGradient}
       colors={[colors.primary700, colors.secondary500]}
@@ -62,7 +61,6 @@ export default function App() {
         </SafeAreaView>
       </ImageBackground>
     </LinearGradient>
-    // </DismissKeyboard>
   );
 }
 
