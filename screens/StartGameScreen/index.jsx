@@ -1,4 +1,11 @@
-import { View, Text, TextInput, Alert } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Alert,
+  KeyboardAvoidingView,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import styles from "./styles";
 import PrimaryButton from "../../components/PrimaryButton";
@@ -34,28 +41,30 @@ const StartGameScreen = ({ onPickNumber }) => {
   };
 
   return (
-    <View>
-      <Text style={styles.title}>Guess My Number</Text>
-      <View style={styles.container}>
-        <Text style={styles.instructionText}>Enter a number</Text>
-        <TextInput
-          style={styles.textInput}
-          maxLength={2}
-          keyboardType="number-pad"
-          value={enteredNumber}
-          onChangeText={handleNumberInput}
-          onSubmitEditing={(e) => console.log(e)}
-        />
-        <View style={styles.buttonsContainer}>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
-          </View>
-          <View style={styles.buttonContainer}>
-            <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
+    <ScrollView style={styles.root}>
+      <KeyboardAvoidingView style={styles.root} behavior="position">
+        <Text style={styles.title}>Guess My Number</Text>
+        <View style={styles.container}>
+          <Text style={styles.instructionText}>Enter a number</Text>
+          <TextInput
+            style={styles.textInput}
+            maxLength={2}
+            keyboardType="number-pad"
+            value={enteredNumber}
+            onChangeText={handleNumberInput}
+            onSubmitEditing={(e) => console.log(e)}
+          />
+          <View style={styles.buttonsContainer}>
+            <View style={styles.buttonContainer}>
+              <PrimaryButton onPress={resetInputHandler}>Reset</PrimaryButton>
+            </View>
+            <View style={styles.buttonContainer}>
+              <PrimaryButton onPress={handleConfirm}>Confirm</PrimaryButton>
+            </View>
           </View>
         </View>
-      </View>
-    </View>
+      </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 

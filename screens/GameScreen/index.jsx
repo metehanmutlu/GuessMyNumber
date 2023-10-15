@@ -7,10 +7,6 @@ import Card from "../../components/Card";
 import { Ionicons } from "@expo/vector-icons";
 import GuessLogItem from "../../components/GuessLogItem";
 
-const sampleData = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-];
-
 const generateRandomBetween = (min, max, exclude) => {
   const rndNumber = Math.floor(Math.random() * (max - min)) + min;
 
